@@ -5,7 +5,7 @@ const menuData = [
     description: '手工面皮 + 蒜香辣酱 + 黄瓜丝，爽口微辣',
     price: 8500,
     category: '凉菜/凉皮',
-    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/LIANG_PI.jpg',
   },
   {
     id: 'roujiamo',
@@ -13,7 +13,7 @@ const menuData = [
     description: '腊汁肉配现烤白吉馍，外脆内软',
     price: 7800,
     category: '面食/主食',
-    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Yummy_Lanzhou_-_Roujiamo.jpg',
   },
   {
     id: 'dumpling',
@@ -21,7 +21,7 @@ const menuData = [
     description: '鲜虾仁猪肉馅，附赠醋与辣椒油',
     price: 9800,
     category: '饺子/点心',
-    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Chinese_dumplings.JPG',
   },
   {
     id: 'baozi',
@@ -29,7 +29,7 @@ const menuData = [
     description: '多汁鲜肉，早晚皆宜',
     price: 5200,
     category: '饺子/点心',
-    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Baozi.JPG',
   },
   {
     id: 'mantou',
@@ -37,7 +37,7 @@ const menuData = [
     description: '松软绵密，搭配豆浆更佳',
     price: 3800,
     category: '饺子/点心',
-    image: 'https://images.unsplash.com/photo-1548943487-a2e4e43b4853?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Handmade_mantou.jpg',
   },
   {
     id: 'twice-cooked',
@@ -45,7 +45,7 @@ const menuData = [
     description: '二刀鲜肉、青椒配米饭，微辣',
     price: 12500,
     category: '家常热菜',
-    image: 'https://images.unsplash.com/photo-1559056961-7a555608f613?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Twice_cooked_pork_%40_Au_Bourgeon_d%27Or_%40_Paris_13_%2833689938815%29.jpg',
   },
   {
     id: 'mapo-tofu',
@@ -53,7 +53,7 @@ const menuData = [
     description: '川味麻辣，含米饭，麻辣可调',
     price: 11800,
     category: '家常热菜',
-    image: 'https://images.unsplash.com/photo-1604908177520-4025a59b0b7a?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Authentic_Mapo_Tofu.jpg',
   },
   {
     id: 'kungpao',
@@ -61,7 +61,7 @@ const menuData = [
     description: '花生鸡丁，微辣，下饭首选',
     price: 12800,
     category: '家常热菜',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Kung_Paos_kyckling.jpg',
   },
   {
     id: 'sour-cabbage',
@@ -69,7 +69,7 @@ const menuData = [
     description: '巴沙鱼片 + 老坛酸菜，含米饭',
     price: 14500,
     category: '特色锅物',
-    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/%E9%85%B8%E8%8F%9C%E9%AD%9A.jpg',
   },
   {
     id: 'spicy-hotpot',
@@ -77,7 +77,7 @@ const menuData = [
     description: '牛肉丸、土豆、莲藕、时蔬，辣度可选',
     price: 13900,
     category: '特色锅物',
-    image: 'https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Malaxiangguo.jpg',
   },
   {
     id: 'soy-milk',
@@ -85,7 +85,7 @@ const menuData = [
     description: '无糖 / 少糖可选，搭配包子',
     price: 3200,
     category: '饮品/甜品',
-    image: 'https://images.unsplash.com/photo-1527169402691-feff5539e52c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/ACupOfSoyMilk20220112.jpg',
   },
   {
     id: 'sweets',
@@ -93,7 +93,7 @@ const menuData = [
     description: '甜品解腻，冷热皆可',
     price: 5200,
     category: '饮品/甜品',
-    image: 'https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/Double_skin_milk_with_red_beans.jpg',
   },
 ];
 
