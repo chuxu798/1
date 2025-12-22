@@ -27,7 +27,7 @@ const menuData = [
   },
   {
     id: 'dumpling',
-    name: '手工虾仁水饺（12只）',
+    name: '手工虾仁水饺',
     description: '鲜虾仁猪肉馅，附赠醋与辣椒油',
     category: '饺子/点心',
     image: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Chinese_dumplings.JPG',
@@ -40,7 +40,7 @@ const menuData = [
   },
   {
     id: 'baozi',
-    name: '鲜肉大包（2只）',
+    name: '鲜肉大包',
     description: '多汁鲜肉，早晚皆宜',
     category: '饺子/点心',
     image: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Baozi.JPG',
@@ -53,7 +53,7 @@ const menuData = [
   },
   {
     id: 'mantou',
-    name: '传统馒头（3只）',
+    name: '传统馒头',
     description: '松软绵密，搭配豆浆更佳',
     category: '饺子/点心',
     image: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Handmade_mantou.jpg',
@@ -105,7 +105,7 @@ const menuData = [
   },
   {
     id: 'sour-cabbage',
-    name: '酸菜鱼（单人锅）',
+    name: '酸菜鱼',
     description: '巴沙鱼片 + 老坛酸菜，含米饭',
     category: '特色锅物',
     image: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/%E9%85%B8%E8%8F%9C%E9%AD%9A.jpg',
@@ -209,6 +209,8 @@ const addonPrices = {
   米饭加量: 1000,
   米饭加一份: 1000,
   包子小份: 0,
+  默认: 0,
+  无: 0,
 };
 
 // Navigation
