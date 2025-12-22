@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>韩中文食外卖 | 下单中心</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">食</div>
+      <div>
+        <p class="brand-title">韩中文食外卖</p>
+        <p class="brand-subtitle">韩国本地 | 中文点单 | 配送到家</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="status-pill">今日配送中</div>
+      <div class="contact">
+        <span>客服 / 追加截图：</span>
+        <strong>카카오톡 ID: cnfood</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="hero">
+      <div>
+        <h1>正宗中国味 · 韩国即时送</h1>
+        <p>凉皮、肉夹馍、饺子、包子、卤味、家常菜一应俱全。支持中文下单，提交后生成单号，按照页面提示转账并发送截图即可。</p>
+        <ul class="hero-list">
+          <li>实时购物车，支持数量增减</li>
+          <li>自动生成订单编号，记录顾客信息与明细</li>
+          <li>下单后展示转账账户，并提醒发送转账截图</li>
+        </ul>
+      </div>
+      <div class="summary-card">
+        <div class="summary-header">
+          <p class="summary-label">预计送达</p>
+          <p class="summary-time">30-45 分钟</p>
+        </div>
+        <div class="summary-body">
+          <p>配送范围：首尔及周边主要城区</p>
+          <p>今日推荐：陕西凉皮、招牌肉夹馍、手工虾仁水饺</p>
+          <p class="highlight">下单后请按照提示转账，并发送截图到上方客服</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <div class="menu-header">
+        <h2>菜单</h2>
+        <div class="menu-tags" id="menu-tags">
+          <button class="tag active" data-category="all">全部</button>
+        </div>
+      </div>
+      <div class="menu-grid" id="menu-grid"></div>
+    </section>
+
+    <aside class="cart-panel">
+      <div class="cart-header">
+        <h3>购物车</h3>
+        <p class="cart-sub">即时计算 · 可重复修改</p>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <p class="muted">还没有添加商品</p>
+      </div>
+      <div class="cart-total">
+        <div>
+          <p>商品小计</p>
+          <p class="total-amount" id="total-amount">₩0</p>
+        </div>
+        <div>
+          <p>打包 / 配送预估</p>
+          <p class="muted">店内核对后确认</p>
+        </div>
+      </div>
+      <form id="checkout-form" class="checkout-form">
+        <label>
+          收货人姓名
+          <input type="text" name="name" placeholder="请输入姓名" required />
+        </label>
+        <label>
+          手机号
+          <input type="tel" name="phone" placeholder="韩国手机号" required />
+        </label>
+        <label>
+          配送地址
+          <textarea name="address" rows="2" placeholder="详细到门牌号" required></textarea>
+        </label>
+        <label>
+          配送时间
+          <input type="text" name="time" placeholder="尽快送达 / 预约时间" />
+        </label>
+        <label>
+          备注（口味、辣度、少油等）
+          <textarea name="notes" rows="2" placeholder="可选填"></textarea>
+        </label>
+        <button type="submit" class="primary">提交订单并生成单号</button>
+      </form>
+      <div id="error-message" class="error-message" role="alert"></div>
+    </aside>
+  </main>
+
+  <section class="order-section" id="order-section" hidden>
+    <div class="order-card">
+      <div class="order-header">
+        <div>
+          <p class="muted">订单编号</p>
+          <p class="order-number" id="order-number"></p>
+        </div>
+        <span class="status-pill success">待转账</span>
+      </div>
+      <div class="order-content">
+        <div>
+          <h3>顾客信息</h3>
+          <ul class="info-list" id="customer-info"></ul>
+        </div>
+        <div>
+          <h3>点单明细</h3>
+          <ul class="info-list" id="order-details"></ul>
+          <p class="total-line">总计：<strong id="order-total">₩0</strong></p>
+        </div>
+      </div>
+      <div class="payment-box">
+        <h4>转账账户</h4>
+        <p><strong>KB국민은행 123-4567-8901 (예금주: HAN FOOD)</strong></p>
+        <p>请在 10 分钟内完成转账，并将转账截图发送到 <strong>카카오톡 ID: cnfood</strong> 或微信 <strong>WeChat: cn-food</strong>。</p>
+        <p>截图备注请包含：订单编号、姓名、联系电话。</p>
+      </div>
+      <div class="order-actions">
+        <button class="secondary" id="copy-order">复制订单详情</button>
+        <button class="primary" id="start-new">再下一单</button>
+      </div>
+      <p class="muted small">店内将核对转账后按明细制作并配送。若有缺货或价格变动，将通过上方联系方式确认。</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>韩中文食外卖 · 正宗中国味在韩国。营业时间 11:00-23:00 · 电话咨询 010-0000-0000</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
