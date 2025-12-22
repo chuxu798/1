@@ -198,6 +198,13 @@ body {
   margin-bottom: 12px;
 }
 
+.actions-inline {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .menu-header {
   display: flex;
   align-items: center;

@@ -5,7 +5,7 @@ const menuData = [
     description: '手工面皮 + 蒜香辣酱 + 黄瓜丝，爽口微辣',
     price: 8500,
     category: '凉菜/凉皮',
-    image: 'https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'roujiamo',
@@ -13,7 +13,7 @@ const menuData = [
     description: '腊汁肉配现烤白吉馍，外脆内软',
     price: 7800,
     category: '面食/主食',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'dumpling',
@@ -21,7 +21,7 @@ const menuData = [
     description: '鲜虾仁猪肉馅，附赠醋与辣椒油',
     price: 9800,
     category: '饺子/点心',
-    image: 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'baozi',
@@ -29,7 +29,7 @@ const menuData = [
     description: '多汁鲜肉，早晚皆宜',
     price: 5200,
     category: '饺子/点心',
-    image: 'https://images.unsplash.com/photo-1604908177235-14f4d1c1a42d?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'mantou',
@@ -37,7 +37,7 @@ const menuData = [
     description: '松软绵密，搭配豆浆更佳',
     price: 3800,
     category: '饺子/点心',
-    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1548943487-a2e4e43b4853?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'twice-cooked',
@@ -45,7 +45,7 @@ const menuData = [
     description: '二刀鲜肉、青椒配米饭，微辣',
     price: 12500,
     category: '家常热菜',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1559056961-7a555608f613?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'mapo-tofu',
@@ -53,7 +53,7 @@ const menuData = [
     description: '川味麻辣，含米饭，麻辣可调',
     price: 11800,
     category: '家常热菜',
-    image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1604908177520-4025a59b0b7a?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'kungpao',
@@ -61,7 +61,7 @@ const menuData = [
     description: '花生鸡丁，微辣，下饭首选',
     price: 12800,
     category: '家常热菜',
-    image: 'https://images.unsplash.com/photo-1470115636492-6d2b56f9146e?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'sour-cabbage',
@@ -69,7 +69,7 @@ const menuData = [
     description: '巴沙鱼片 + 老坛酸菜，含米饭',
     price: 14500,
     category: '特色锅物',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'spicy-hotpot',
@@ -77,7 +77,7 @@ const menuData = [
     description: '牛肉丸、土豆、莲藕、时蔬，辣度可选',
     price: 13900,
     category: '特色锅物',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'soy-milk',
@@ -85,7 +85,7 @@ const menuData = [
     description: '无糖 / 少糖可选，搭配包子',
     price: 3200,
     category: '饮品/甜品',
-    image: 'https://images.unsplash.com/photo-1544145945-f90425340c7b?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1527169402691-feff5539e52c?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'sweets',
@@ -93,7 +93,7 @@ const menuData = [
     description: '甜品解腻，冷热皆可',
     price: 5200,
     category: '饮品/甜品',
-    image: 'https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
@@ -124,10 +124,13 @@ const toInfoBtn = document.getElementById('to-info');
 const toInfoCta = document.getElementById('to-info-cta');
 const backToMenuBtn = document.getElementById('back-to-menu');
 const startOrderBtn = document.getElementById('start-order');
+const backToHomeBtn = document.getElementById('back-to-home');
+const backToInfoBtn = document.getElementById('back-to-info');
 
 // Form
 const customerForm = document.getElementById('customer-form');
 const formError = document.getElementById('form-error');
+const timeSelect = document.getElementById('time-select');
 
 // Review elements
 const orderNumberEl = document.getElementById('order-number');
@@ -152,6 +155,62 @@ const addonChips = document.getElementById('addon-chips');
 const modalAddMore = document.getElementById('modal-add-more');
 const modalAddNext = document.getElementById('modal-add-next');
 
+const optionsMap = {
+  liangpi: {
+    tastes: ['清淡 / 不辣', '微辣', '中辣'],
+    addons: ['蒜水', '陈醋', '香油', '辣椒油', '黄瓜丝多'],
+  },
+  roujiamo: {
+    tastes: ['不辣', '微辣', '中辣'],
+    addons: ['加香菜', '加洋葱', '加辣椒', '加肉'],
+  },
+  dumpling: {
+    tastes: ['原味蘸料', '微辣蘸料', '蒜醋蘸料'],
+    addons: ['辣椒油', '陈醋', '蒜泥'],
+  },
+  baozi: {
+    tastes: ['标准', '加馅'],
+    addons: ['酱油', '陈醋', '辣椒油', '咸菜'],
+  },
+  mantou: {
+    tastes: ['小份（3只）', '大份（6只）'],
+    addons: ['咸菜', '炼乳', '花生碎'],
+  },
+  'twice-cooked': {
+    tastes: ['微辣', '中辣', '重辣', '少油'],
+    addons: ['蒜泥', '青椒加量', '米饭加一份'],
+  },
+  'mapo-tofu': {
+    tastes: ['微辣', '中辣', '重辣', '少麻'],
+    addons: ['花椒粉', '米饭加量', '葱花'],
+  },
+  kungpao: {
+    tastes: ['不辣', '少辣', '中辣', '重辣'],
+    addons: ['花生多', '葱花', '米饭加量'],
+  },
+  'sour-cabbage': {
+    tastes: ['标准微辣', '中辣', '不辣'],
+    addons: ['粉丝加量', '酸菜多', '香菜', '米饭加量'],
+  },
+  'spicy-hotpot': {
+    tastes: ['微辣', '中辣', '重辣'],
+    addons: ['蒜蓉', '花生碎', '香菜', '米饭加量'],
+  },
+  'soy-milk': {
+    tastes: ['无糖', '少糖', '正常糖'],
+    addons: ['花生碎', '炼乳'],
+  },
+  sweets: {
+    tastes: ['热食', '冷食'],
+    addons: ['红豆加量', '椰果', '炼乳'],
+  },
+};
+
+const defaultOptions = {
+  tastes: ['标准', '微辣', '中辣'],
+  addons: ['陈醋', '香油', '辣椒油'],
+};
+
 // Navigation
 function goToStep(step) {
   Object.entries(steps).forEach(([key, el]) => {
@@ -169,6 +228,8 @@ toInfoCta.addEventListener('click', () => goToStep(3));
 backToMenuBtn.addEventListener('click', () => goToStep(2));
 startNewTop.addEventListener('click', resetAll);
 startNewBottom.addEventListener('click', resetAll);
+backToHomeBtn.addEventListener('click', () => goToStep(1));
+backToInfoBtn.addEventListener('click', () => goToStep(3));
 
 // Rendering
 function renderTags() {
@@ -283,6 +344,26 @@ function openModal(item) {
   modalPrice.textContent = formatCurrency(item.price);
   modalCategory.textContent = item.category;
   modalImg.src = item.image;
+
+  const options = optionsMap[item.id] || defaultOptions;
+  tasteSelect.innerHTML = '';
+  options.tastes.forEach((taste) => {
+    const opt = document.createElement('option');
+    opt.value = taste;
+    opt.textContent = taste;
+    tasteSelect.appendChild(opt);
+  });
+
+  addonChips.innerHTML = '';
+  options.addons.forEach((addon) => {
+    const label = document.createElement('label');
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.value = addon;
+    label.append(input, document.createTextNode(` ${addon}`));
+    addonChips.appendChild(label);
+  });
+
   modal.hidden = false;
 }
 
@@ -375,16 +456,22 @@ copyOrderBtn.addEventListener('click', copyOrderDetails);
 
 function copyOrderDetails() {
   if (!state.orderNumber) return;
-  const details = [
-    `订单编号: ${state.orderNumber}`,
-    `下单时间: ${formatTime(state.orderTime)}`,
-    '--- 顾客信息 ---',
-    ...Array.from(customerInfo.children).map((li) => li.innerText),
-    '--- 点单明细 ---',
-    ...Array.from(orderDetails.children).map((li) => li.innerText),
-    `总计: ${orderTotal.textContent}`,
-    '请将转账截图发送到微信: chuxu-waimai',
-  ].join('\n');
+  const lines = [];
+  const pushLine = (label, value) => {
+    lines.push(`[${label}] ${value}`, '');
+  };
+  pushLine('订单编号', state.orderNumber);
+  pushLine('下单时间', formatTime(state.orderTime));
+  Array.from(customerInfo.children).forEach((li) => {
+    const [labelNode, valueNode] = li.querySelectorAll('span');
+    pushLine(labelNode?.innerText || '信息', valueNode?.innerText || '');
+  });
+  Array.from(orderDetails.children).forEach((li) => {
+    pushLine('菜品', li.innerText);
+  });
+  pushLine('总计', orderTotal.textContent);
+  lines.push('[转账说明] 请将转账截图发送到微信: chuxu-waimai');
+  const details = lines.join('\n');
 
   navigator.clipboard
     .writeText(details)
@@ -437,3 +524,20 @@ renderMenu();
 renderCart('cart-list-menu', 'subtotal-menu');
 renderCart('cart-list-info', 'subtotal-info');
 goToStep(1);
+
+function populateTimeOptions() {
+  if (!timeSelect) return;
+  const startHour = 7;
+  const endHour = 22;
+  for (let h = startHour; h <= endHour; h++) {
+    ['00', '30'].forEach((m) => {
+      const time = `${String(h).padStart(2, '0')}:${m}`;
+      const option = document.createElement('option');
+      option.value = time;
+      option.textContent = time;
+      timeSelect.appendChild(option);
+    });
+  }
+}
+
+populateTimeOptions();

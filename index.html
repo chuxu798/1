@@ -71,7 +71,10 @@
           <h2>选择菜品与口味</h2>
           <p class="muted">点击菜品可选择辣度、咸度和小料，加完后可继续点餐或前往填写信息。</p>
         </div>
-        <button class="secondary" id="to-info" disabled>去填写信息（购物车为空）</button>
+        <div class="actions-inline">
+          <button class="secondary" id="back-to-home">返回首页</button>
+          <button class="secondary" id="to-info" disabled>去填写信息（购物车为空）</button>
+        </div>
       </div>
       <div class="menu-header">
         <div class="menu-tags" id="menu-tags">
@@ -104,7 +107,9 @@
           <h2>收货信息 & 购物车明细</h2>
           <p class="muted">确认收货方式与联系人，点击提交生成订单号。</p>
         </div>
-        <button class="secondary" id="back-to-menu">返回菜单继续加菜</button>
+        <div class="actions-inline">
+          <button class="secondary" id="back-to-menu">返回菜单继续加菜</button>
+        </div>
       </div>
       <div class="info-grid">
         <form id="customer-form" class="form-card">
@@ -118,7 +123,9 @@
             <textarea name="address" rows="2" placeholder="全州市 + 详细门牌号" required></textarea>
           </label>
           <label>送达时间
-            <input type="text" name="time" placeholder="尽快送达 / 预约时间" />
+            <select name="time" id="time-select">
+              <option value="出餐后直接派送" selected>出餐后直接派送</option>
+            </select>
           </label>
           <label>备注（口味、少油等）
             <textarea name="notes" rows="2" placeholder="可选填"></textarea>
@@ -148,7 +155,10 @@
           <h2>核对信息并转账</h2>
           <p class="muted">请复制订单信息后发送给微信客服，并完成转账。</p>
         </div>
-        <button class="secondary" id="start-new">再下一单</button>
+        <div class="actions-inline">
+          <button class="secondary" id="back-to-info">返回信息填写</button>
+          <button class="secondary" id="start-new">再下一单</button>
+        </div>
       </div>
       <div class="order-card">
         <div class="order-header">
@@ -229,7 +239,7 @@
         </div>
         <div class="modal-actions">
           <button class="secondary" id="modal-add-more">加入购物车</button>
-          <button class="primary" id="modal-add-next">加入并去填写信息</button>
+          <button class="primary" id="modal-add-next">已选好直接下单</button>
         </div>
       </div>
     </div>
