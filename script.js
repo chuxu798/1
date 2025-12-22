@@ -3,97 +3,145 @@ const menuData = [
     id: 'liangpi',
     name: '陕西凉皮',
     description: '手工面皮 + 蒜香辣酱 + 黄瓜丝，爽口微辣',
-    price: 8500,
     category: '凉菜/凉皮',
     image: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/LIANG_PI.jpg',
+    sizes: {
+      large: { label: '大份', price: 10000 },
+      medium: { label: '中份', price: 8500 },
+      small: { label: '小份', price: 6500 },
+    },
+    tastes: ['清淡 / 不辣', '微辣', '中辣'],
+    addons: ['蒜水', '陈醋', '香油', '辣椒油', '黄瓜丝多'],
   },
   {
     id: 'roujiamo',
     name: '招牌肉夹馍',
     description: '腊汁肉配现烤白吉馍，外脆内软',
-    price: 7800,
     category: '面食/主食',
     image: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Yummy_Lanzhou_-_Roujiamo.jpg',
+    sizes: {
+      standard: { label: '统一规格', price: 7800 },
+    },
+    tastes: ['不辣', '微辣'],
+    addons: ['加肉', '加鸡蛋', '加豆腐干'],
   },
   {
     id: 'dumpling',
     name: '手工虾仁水饺（12只）',
     description: '鲜虾仁猪肉馅，附赠醋与辣椒油',
-    price: 9800,
     category: '饺子/点心',
     image: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Chinese_dumplings.JPG',
+    sizes: {
+      large: { label: '大份 21只', price: 8500 },
+      medium: { label: '中份 12只', price: 6000 },
+    },
+    tastes: ['蒜醋蘸料', '酱油蘸料', '辣醋蘸料'],
+    addons: ['咸菜'],
   },
   {
     id: 'baozi',
     name: '鲜肉大包（2只）',
     description: '多汁鲜肉，早晚皆宜',
-    price: 5200,
     category: '饺子/点心',
     image: 'https://upload.wikimedia.org/wikipedia/commons/5/55/Baozi.JPG',
+    sizes: {
+      large: { label: '大份 21只等量', price: 8500 },
+      medium: { label: '中份 12只等量', price: 6000 },
+    },
+    tastes: ['猪肉大葱', '韭菜鸡蛋', '鲜肉虾仁', '豆角猪肉', '荠菜鲜肉', '牛肉大葱', '香菜鲜肉'],
+    addons: ['无'],
   },
   {
     id: 'mantou',
     name: '传统馒头（3只）',
     description: '松软绵密，搭配豆浆更佳',
-    price: 3800,
     category: '饺子/点心',
     image: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Handmade_mantou.jpg',
+    sizes: {
+      default: { label: '单个', price: 1000 },
+    },
+    tastes: ['默认'],
+    addons: [],
   },
   {
     id: 'twice-cooked',
     name: '回锅肉套餐',
     description: '二刀鲜肉、青椒配米饭，微辣',
-    price: 12500,
     category: '家常热菜',
     image: 'https://upload.wikimedia.org/wikipedia/commons/5/5f/Twice_cooked_pork_%40_Au_Bourgeon_d%27Or_%40_Paris_13_%2833689938815%29.jpg',
+    sizes: {
+      large: { label: '大份', price: 15500 },
+      medium: { label: '中份', price: 12500 },
+      small: { label: '小份', price: 10000 },
+    },
+    tastes: ['原味', '偏甜', '偏酸'],
+    addons: ['米饭'],
   },
   {
     id: 'mapo-tofu',
     name: '麻婆豆腐套餐',
     description: '川味麻辣，含米饭，麻辣可调',
-    price: 11800,
     category: '家常热菜',
     image: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Authentic_Mapo_Tofu.jpg',
+    sizes: {
+      large: { label: '大份', price: 9500 },
+      medium: { label: '中份', price: 8000 },
+      small: { label: '小份', price: 6000 },
+    },
+    tastes: ['微辣', '中辣', '重辣'],
+    addons: ['米饭'],
   },
   {
     id: 'kungpao',
     name: '宫保鸡丁套餐',
     description: '花生鸡丁，微辣，下饭首选',
-    price: 12800,
     category: '家常热菜',
     image: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Kung_Paos_kyckling.jpg',
+    sizes: {
+      standard: { label: '统一规格', price: 12800 },
+    },
+    tastes: ['不辣', '少辣', '中辣', '重辣'],
+    addons: ['花生多', '葱花', '米饭加量'],
   },
   {
     id: 'sour-cabbage',
     name: '酸菜鱼（单人锅）',
     description: '巴沙鱼片 + 老坛酸菜，含米饭',
-    price: 14500,
     category: '特色锅物',
     image: 'https://upload.wikimedia.org/wikipedia/commons/f/f8/%E9%85%B8%E8%8F%9C%E9%AD%9A.jpg',
-  },
-  {
-    id: 'spicy-hotpot',
-    name: '麻辣香锅（单人）',
-    description: '牛肉丸、土豆、莲藕、时蔬，辣度可选',
-    price: 13900,
-    category: '特色锅物',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Malaxiangguo.jpg',
+    sizes: {
+      large: { label: '大份', price: 12500 },
+      medium: { label: '中份', price: 10000 },
+      small: { label: '小份', price: 8000 },
+    },
+    tastes: ['标准微辣', '中辣', '不辣'],
+    addons: ['粉丝加量', '酸菜多', '香菜', '米饭加量'],
   },
   {
     id: 'soy-milk',
     name: '现磨豆浆',
     description: '无糖 / 少糖可选，搭配包子',
-    price: 3200,
     category: '饮品/甜品',
     image: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/ACupOfSoyMilk20220112.jpg',
+    sizes: {
+      large: { label: '大杯', price: 4500 },
+      medium: { label: '中杯', price: 3000 },
+    },
+    tastes: ['无糖', '少糖', '正常糖'],
+    addons: ['包子小份'],
   },
   {
     id: 'sweets',
     name: '红豆双皮奶',
     description: '甜品解腻，冷热皆可',
-    price: 5200,
     category: '饮品/甜品',
     image: 'https://upload.wikimedia.org/wikipedia/commons/b/b3/Double_skin_milk_with_red_beans.jpg',
+    sizes: {
+      large: { label: '大份', price: 8800 },
+      medium: { label: '中份', price: 5200 },
+    },
+    tastes: ['热食', '冷食'],
+    addons: ['红豆加量', '椰果', '炼乳'],
   },
 ];
 
@@ -152,63 +200,12 @@ const modalImg = document.getElementById('modal-image');
 const modalClose = document.getElementById('modal-close');
 const tasteSelect = document.getElementById('taste-select');
 const addonChips = document.getElementById('addon-chips');
+const sizeSelect = document.getElementById('size-select');
 const modalAddMore = document.getElementById('modal-add-more');
 const modalAddNext = document.getElementById('modal-add-next');
 
-const optionsMap = {
-  liangpi: {
-    tastes: ['清淡 / 不辣', '微辣', '中辣'],
-    addons: ['蒜水', '陈醋', '香油', '辣椒油', '黄瓜丝多'],
-  },
-  roujiamo: {
-    tastes: ['不辣', '微辣', '中辣'],
-    addons: ['加香菜', '加洋葱', '加辣椒', '加肉'],
-  },
-  dumpling: {
-    tastes: ['原味蘸料', '微辣蘸料', '蒜醋蘸料'],
-    addons: ['辣椒油', '陈醋', '蒜泥'],
-  },
-  baozi: {
-    tastes: ['标准', '加馅'],
-    addons: ['酱油', '陈醋', '辣椒油', '咸菜'],
-  },
-  mantou: {
-    tastes: ['小份（3只）', '大份（6只）'],
-    addons: ['咸菜', '炼乳', '花生碎'],
-  },
-  'twice-cooked': {
-    tastes: ['微辣', '中辣', '重辣', '少油'],
-    addons: ['蒜泥', '青椒加量', '米饭加一份'],
-  },
-  'mapo-tofu': {
-    tastes: ['微辣', '中辣', '重辣', '少麻'],
-    addons: ['花椒粉', '米饭加量', '葱花'],
-  },
-  kungpao: {
-    tastes: ['不辣', '少辣', '中辣', '重辣'],
-    addons: ['花生多', '葱花', '米饭加量'],
-  },
-  'sour-cabbage': {
-    tastes: ['标准微辣', '中辣', '不辣'],
-    addons: ['粉丝加量', '酸菜多', '香菜', '米饭加量'],
-  },
-  'spicy-hotpot': {
-    tastes: ['微辣', '中辣', '重辣'],
-    addons: ['蒜蓉', '花生碎', '香菜', '米饭加量'],
-  },
-  'soy-milk': {
-    tastes: ['无糖', '少糖', '正常糖'],
-    addons: ['花生碎', '炼乳'],
-  },
-  sweets: {
-    tastes: ['热食', '冷食'],
-    addons: ['红豆加量', '椰果', '炼乳'],
-  },
-};
-
-const defaultOptions = {
-  tastes: ['标准', '微辣', '中辣'],
-  addons: ['陈醋', '香油', '辣椒油'],
+const addonPrices = {
+  米饭: 1000,
 };
 
 // Navigation
@@ -294,7 +291,7 @@ function renderCart(target, subtotalEl) {
       const line = document.createElement('div');
       line.className = 'cart-line';
       const info = document.createElement('div');
-      info.innerHTML = `<strong>${entry.item.name}</strong><br/><span class="muted">${entry.taste} · ${entry.addons.length ? entry.addons.join(' / ') : '无小料'}</span>`;
+      info.innerHTML = `<strong>${entry.item.name}（${entry.sizeLabel}）</strong><br/><span class="muted">${entry.taste} · ${entry.addons.length ? entry.addons.join(' / ') : '无小料'}</span>`;
 
       const counter = document.createElement('div');
       counter.className = 'counter';
@@ -309,13 +306,13 @@ function renderCart(target, subtotalEl) {
       counter.append(minus, count, plus);
 
       const price = document.createElement('div');
-      price.innerHTML = `<strong>${formatCurrency(entry.item.price * entry.qty)}</strong>`;
+      price.innerHTML = `<strong>${formatCurrency(entry.price * entry.qty)}</strong>`;
 
       line.append(info, counter, price);
       container.appendChild(line);
     });
   }
-  const subtotal = Array.from(state.cart.values()).reduce((sum, { item, qty }) => sum + item.price * qty, 0);
+  const subtotal = Array.from(state.cart.values()).reduce((sum, { price, qty }) => sum + price * qty, 0);
   document.getElementById(subtotalEl).textContent = formatCurrency(subtotal);
   cartPill.textContent = `购物车 ${state.cart.size} · ${formatCurrency(subtotal)}`;
   const hasItems = state.cart.size > 0;
@@ -341,21 +338,32 @@ function openModal(item) {
   state.currentDish = item;
   modalTitle.textContent = item.name;
   modalDesc.textContent = item.description;
-  modalPrice.textContent = formatCurrency(item.price);
   modalCategory.textContent = item.category;
   modalImg.src = item.image;
 
-  const options = optionsMap[item.id] || defaultOptions;
+  // sizes
+  sizeSelect.innerHTML = '';
+  Object.entries(item.sizes).forEach(([key, val], idx) => {
+    const opt = document.createElement('option');
+    opt.value = key;
+    opt.textContent = `${val.label}（₩${val.price.toLocaleString('ko-KR')}）`;
+    if (idx === 0) opt.selected = true;
+    sizeSelect.appendChild(opt);
+  });
+
+  // tastes
   tasteSelect.innerHTML = '';
-  options.tastes.forEach((taste) => {
+  (item.tastes || ['标准']).forEach((taste) => {
     const opt = document.createElement('option');
     opt.value = taste;
     opt.textContent = taste;
     tasteSelect.appendChild(opt);
   });
 
+  // addons
   addonChips.innerHTML = '';
-  options.addons.forEach((addon) => {
+  (item.addons && item.addons.length ? item.addons : ['无']).forEach((addon) => {
+    if (addon === '无') return;
     const label = document.createElement('label');
     const input = document.createElement('input');
     input.type = 'checkbox';
@@ -363,6 +371,7 @@ function openModal(item) {
     label.append(input, document.createTextNode(` ${addon}`));
     addonChips.appendChild(label);
   });
+  updateModalPrice();
 
   modal.hidden = false;
 }
@@ -371,13 +380,27 @@ function closeModal() {
   modal.hidden = true;
   state.currentDish = null;
   addonChips.querySelectorAll('input[type="checkbox"]').forEach((c) => (c.checked = false));
-  tasteSelect.value = '清淡';
+  tasteSelect.value = tasteSelect.options[0]?.value || '';
+  sizeSelect.value = sizeSelect.options[0]?.value || '';
+}
+
+function updateModalPrice() {
+  if (!state.currentDish) return;
+  const sizeKey = sizeSelect.value || Object.keys(state.currentDish.sizes)[0];
+  const sizeData = state.currentDish.sizes[sizeKey] || Object.values(state.currentDish.sizes)[0];
+  const addonCost = Array.from(addonChips.querySelectorAll('input:checked')).reduce(
+    (sum, input) => sum + (addonPrices[input.value] || 500),
+    0,
+  );
+  modalPrice.textContent = formatCurrency(sizeData.price + addonCost);
 }
 
 modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', (e) => {
   if (e.target === modal) closeModal();
 });
+sizeSelect.addEventListener('change', updateModalPrice);
+addonChips.addEventListener('change', updateModalPrice);
 
 function buildCartKey(id, taste, addons) {
   const addonKey = addons.slice().sort().join('+') || 'none';
@@ -386,14 +409,20 @@ function buildCartKey(id, taste, addons) {
 
 function addCurrentDish(goNext = false) {
   if (!state.currentDish) return;
+  const sizeKey = sizeSelect.value;
+  const sizeData = state.currentDish.sizes[sizeKey] || Object.values(state.currentDish.sizes)[0];
   const taste = tasteSelect.value;
   const addons = Array.from(addonChips.querySelectorAll('input:checked')).map((c) => c.value);
-  const key = buildCartKey(state.currentDish.id, taste, addons);
+  const key = buildCartKey(`${state.currentDish.id}-${sizeKey}`, taste, addons);
+  const addonCost = addons.reduce((sum, a) => sum + (addonPrices[a] || 500), 0);
+  const price = sizeData.price + addonCost;
   const current = state.cart.get(key);
   state.cart.set(key, {
     item: state.currentDish,
     taste,
     addons,
+    sizeLabel: sizeData.label,
+    price,
     qty: current ? current.qty + 1 : 1,
   });
   renderCart('cart-list-menu', 'subtotal-menu');
@@ -441,10 +470,10 @@ function buildOrderSummary(formData) {
 
   orderDetails.innerHTML = '';
   let total = 0;
-  state.cart.forEach(({ item, qty, taste, addons }) => {
+  state.cart.forEach(({ item, qty, taste, addons, sizeLabel, price }) => {
     const li = document.createElement('li');
-    const sub = item.price * qty;
-    li.innerHTML = `<span>${item.name} × ${qty}<br/><small class="muted">${taste} · ${addons.length ? addons.join(' / ') : '无小料'}</small></span><span>${formatCurrency(sub)}</span>`;
+    const sub = price * qty;
+    li.innerHTML = `<span>${item.name}（${sizeLabel}） × ${qty}<br/><small class="muted">${taste} · ${addons.length ? addons.join(' / ') : '无小料'}</small></span><span>${formatCurrency(sub)}</span>`;
     orderDetails.appendChild(li);
     total += sub;
   });
@@ -457,20 +486,29 @@ copyOrderBtn.addEventListener('click', copyOrderDetails);
 function copyOrderDetails() {
   if (!state.orderNumber) return;
   const lines = [];
-  const pushLine = (label, value) => {
-    lines.push(`[${label}] ${value}`, '');
-  };
-  pushLine('订单编号', state.orderNumber);
-  pushLine('下单时间', formatTime(state.orderTime));
+  lines.push('-------------------订单信息-------------------');
+  lines.push(`[订单编号] ${state.orderNumber}`);
+  lines.push(`[下单时间] ${formatTime(state.orderTime)}`);
+  lines.push('');
+  lines.push('----------------预订者个人信息---------------');
   Array.from(customerInfo.children).forEach((li) => {
     const [labelNode, valueNode] = li.querySelectorAll('span');
-    pushLine(labelNode?.innerText || '信息', valueNode?.innerText || '');
+    lines.push(`[${labelNode?.innerText || '信息'}] ${valueNode?.innerText || ''}`);
   });
-  Array.from(orderDetails.children).forEach((li) => {
-    pushLine('菜品', li.innerText);
+  lines.push('');
+  lines.push('-------------------订单明细-------------------');
+  state.cart.forEach(({ item, qty, taste, addons, sizeLabel, price }) => {
+    lines.push(`[菜品] ${item.name}（${sizeLabel}） × ${qty}`);
+    lines.push(`${taste} · ${addons.length ? addons.join(' / ') : '无小料'}`);
+    lines.push(formatCurrency(price * qty));
+    lines.push('');
   });
-  pushLine('总计', orderTotal.textContent);
-  lines.push('[转账说明] 请将转账截图发送到微信: chuxu-waimai');
+  lines.push(`[总计] ${orderTotal.textContent}`);
+  lines.push('');
+  lines.push('---------------------说明----------------------');
+  lines.push('[转账说明] 请于10分钟内将转账截图发送到微信: chuxu-waimai');
+  lines.push('[转账账户]110-5164-5562155 新韩银行');
+  lines.push('[订单确认] 在付款成功并截图发送后我们将回复您转账核对成功，并按照您指定的时间进行派送，请稍等~感谢您的选择~~');
   const details = lines.join('\n');
 
   navigator.clipboard

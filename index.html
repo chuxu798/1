@@ -211,6 +211,11 @@
       <div class="modal-body">
         <img id="modal-image" alt="菜品图片" />
         <div class="option-group">
+          <label>规格（大/中/小）
+            <select id="size-select"></select>
+          </label>
+        </div>
+        <div class="option-group">
           <label>口味（辣度/咸度）
             <select id="taste-select">
               <option value="清淡">清淡 / 不辣</option>
@@ -222,7 +227,7 @@
           </label>
         </div>
         <div class="option-group">
-          <p class="label-inline">可选小料</p>
+          <p class="label-inline">可选小料（再加一份，每份+₩500，如米饭+₩1,000）</p>
           <div class="chips" id="addon-chips">
             <label><input type="checkbox" value="糖蒜" /> 糖蒜</label>
             <label><input type="checkbox" value="陈醋" /> 醋</label>
