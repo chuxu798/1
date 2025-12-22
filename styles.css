@@ -262,8 +262,8 @@ body {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
   margin-top: 12px;
 }
 
@@ -273,7 +273,7 @@ body {
   background: var(--surface);
   overflow: hidden;
   display: grid;
-  grid-template-rows: 140px 1fr;
+  grid-template-rows: 120px 1fr;
   cursor: pointer;
   box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -291,20 +291,21 @@ body {
 }
 
 .item-body {
-  padding: 10px 12px 12px;
+  padding: 8px 10px 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .item-body h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .price {
   color: #b91c1c;
   font-weight: 800;
+  font-size: 14px;
 }
 
 .cart-drawer {
@@ -672,10 +673,10 @@ select {
   }
   .menu-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
+    gap: 8px;
   }
   .item-card {
-    grid-template-rows: 120px 1fr;
+    grid-template-rows: 110px 1fr;
   }
   .cart-drawer {
     margin-top: 10px;

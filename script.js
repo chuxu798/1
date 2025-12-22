@@ -521,17 +521,17 @@ copyOrderBtn.addEventListener('click', copyOrderDetails);
 function copyOrderDetails() {
   if (!state.orderNumber) return;
   const lines = [];
-  lines.push('-------------订单信息-------------');
+  lines.push('-------------------订单信息-------------');
   lines.push(`[订单编号] ${state.orderNumber}`);
   lines.push(`[下单时间] ${formatTime(state.orderTime)}`);
   lines.push('');
-  lines.push('----------预订者个人信息---------');
+  lines.push('--------------预订者个人信息---------');
   Array.from(customerInfo.children).forEach((li) => {
     const [labelNode, valueNode] = li.querySelectorAll('span');
     lines.push(`[${labelNode?.innerText || '信息'}] ${valueNode?.innerText || ''}`);
   });
   lines.push('');
-  lines.push('-------------订单明细-------------');
+  lines.push('------------------订单明细--------------');
   state.cart.forEach(({ item, qty, taste, addons, sizeLabel, price }) => {
     lines.push(`[菜品] ${item.name}（${sizeLabel}） × ${qty}`);
     lines.push(`${taste} · ${addons.length ? addons.join(' / ') : '无小料'}`);
@@ -540,7 +540,7 @@ function copyOrderDetails() {
   });
   lines.push(`[总计] ${orderTotal.textContent}`);
   lines.push('');
-  lines.push('---------------说明----------------');
+  lines.push('--------------------说明-----------------');
   lines.push('[转账说明] 请于10分钟内将转账截图发送到微信: chuxu-waimai');
   lines.push('[转账账户]110-5164-5562155 新韩银行');
   lines.push('[订单确认] 在付款成功并截图发送后我们将回复您转账核对成功，并按照您指定的时间进行派送，请稍等~感谢您的选择~~');
