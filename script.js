@@ -255,6 +255,8 @@ function renderMenu() {
   menuGrid.innerHTML = '';
   const filtered = state.activeCategory === 'all' ? menuData : menuData.filter((item) => item.category === state.activeCategory);
   filtered.forEach((item) => {
+    const firstSize = Object.values(item.sizes || {})[0];
+    const basePrice = firstSize ? firstSize.price : 0;
     const card = document.createElement('div');
     card.className = 'item-card';
     card.addEventListener('click', () => openModal(item));
@@ -273,7 +275,7 @@ function renderMenu() {
     desc.textContent = item.description;
     const price = document.createElement('p');
     price.className = 'price';
-    price.textContent = formatCurrency(item.price);
+    price.textContent = formatCurrency(basePrice);
 
     body.append(name, desc, price);
     card.append(img, body);
