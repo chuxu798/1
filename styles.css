@@ -22,6 +22,10 @@ body {
   line-height: 1.6;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 .topbar {
   display: flex;
   align-items: center;
