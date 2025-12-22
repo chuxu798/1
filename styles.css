@@ -213,10 +213,9 @@ body {
 }
 
 .menu-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 8px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .menu-tags-top {
@@ -460,8 +459,8 @@ select {
 
 .order-header {
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .order-number {

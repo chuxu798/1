@@ -98,7 +98,9 @@ const menuData = [
     category: '家常热菜',
     image: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Kung_Paos_kyckling.jpg',
     sizes: {
-      standard: { label: '统一规格', price: 12800 },
+      large: { label: '大份', price: 12500 },
+      medium: { label: '中份', price: 10000 },
+      small: { label: '小份', price: 6500 },
     },
     tastes: ['不辣', '少辣', '中辣', '重辣'],
     addons: ['花生多', '葱花', '米饭加量'],
@@ -168,7 +170,6 @@ const cartListMenu = document.getElementById('cart-list-menu');
 const cartListInfo = document.getElementById('cart-list-info');
 const subtotalMenu = document.getElementById('subtotal-menu');
 const subtotalInfo = document.getElementById('subtotal-info');
-const cartPill = document.getElementById('cart-pill');
 const toInfoCta = document.getElementById('to-info-cta');
 const backToMenuBtn = document.getElementById('back-to-menu');
 const startOrderBtn = document.getElementById('start-order');
@@ -331,7 +332,6 @@ function renderCart(target, subtotalEl) {
   }
   const subtotal = Array.from(state.cart.values()).reduce((sum, { price, qty }) => sum + price * qty, 0);
   document.getElementById(subtotalEl).textContent = formatCurrency(subtotal);
-  cartPill.textContent = `购物车 ${state.cart.size} · ${formatCurrency(subtotal)}`;
   const hasItems = state.cart.size > 0;
   toInfoCta.disabled = !hasItems;
 }
@@ -393,9 +393,9 @@ function openModal(item) {
       const input = document.createElement('input');
       input.type = 'checkbox';
       input.value = addon;
-      const price = addonPrices[addon] !== undefined ? addonPrices[addon] : 500;
+      const price = addonPrices[addon] !== undefined ? addonPrices[addon] : 0;
       const text = document.createElement('span');
-      text.textContent = `${addon}（+₩${price.toLocaleString('ko-KR')}）`;
+      text.textContent = price > 0 ? `${addon}（+₩${price.toLocaleString('ko-KR')}）` : `${addon}（+₩0）`;
       label.append(input, text);
       addonChips.appendChild(label);
     });
