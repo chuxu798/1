@@ -20,6 +20,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  font-size: 15px;
 }
 
 [hidden] {
@@ -360,7 +361,7 @@ body {
 
 .primary,
 .secondary {
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -517,9 +518,9 @@ select {
   background: var(--surface);
   border-radius: 14px;
   border: 1px solid var(--border);
-  max-width: 640px;
+  max-width: 520px;
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
@@ -536,7 +537,7 @@ select {
 .modal-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .modal-body img {
@@ -561,10 +562,26 @@ select {
 .chips label {
   padding: 6px 10px;
   border-radius: 999px;
-  background: #f1f5f9;
+  background: #ffffff;
   border: 1px solid var(--border);
   font-size: 13px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chips input:checked + span {
+  background: #fef3c7;
+  color: #78350f;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid #fcd34d;
+}
+
+.selected-choice {
+  background: #fef3c7;
+  border-color: #f59e0b !important;
 }
 
 .modal-foot {

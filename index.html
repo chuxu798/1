@@ -73,7 +73,6 @@
         </div>
         <div class="actions-inline">
           <button class="secondary" id="back-to-home">返回首页</button>
-          <button class="secondary" id="to-info" disabled>去填写信息（购物车为空）</button>
         </div>
       </div>
       <div class="menu-header">
@@ -186,12 +185,12 @@
           <h4>转账账户</h4>
           <p><strong>KB국민은행 123-4567-8901 (예금주: CHU XU)</strong></p>
           <p>请在 10 分钟内完成转账，并将转账截图发送到微信：<strong>chuxu-waimai</strong>。</p>
-          <p>发送时请附上：订单编号、姓名、联系电话。</p>
+          <p>请点击复制订单信息按钮，之后将信息粘贴发送给微信客服，转账后将转账截图一并发送，客服核对转账信息后会立刻为您安排订单。</p>
         </div>
-        <div class="order-actions">
-          <button class="secondary" id="copy-order">复制订单信息</button>
-          <button class="primary" id="start-new-bottom">返回首页</button>
-        </div>
+      <div class="order-actions">
+          <button class="primary" id="copy-order">复制订单信息</button>
+          <button class="secondary" id="start-new-bottom">返回首页</button>
+      </div>
         <p class="muted small">店内核对转账后按明细制作并配送。如有缺货或价格变动，会通过微信确认。</p>
       </div>
     </section>
@@ -211,12 +210,14 @@
       <div class="modal-body">
         <img id="modal-image" alt="菜品图片" />
         <div class="option-group">
-          <label>规格（大/中/小）
+          <p class="label-inline">1. 规格</p>
+          <label>
             <select id="size-select"></select>
           </label>
         </div>
         <div class="option-group">
-          <label>口味（辣度/咸度）
+          <p class="label-inline">2. 口味</p>
+          <label>
             <select id="taste-select">
               <option value="清淡">清淡 / 不辣</option>
               <option value="微辣">微辣</option>
@@ -227,7 +228,7 @@
           </label>
         </div>
         <div class="option-group">
-          <p class="label-inline">可选小料（再加一份，每份+₩500，如米饭+₩1,000）</p>
+          <p class="label-inline">3. 可选小料</p>
           <div class="chips" id="addon-chips">
             <label><input type="checkbox" value="糖蒜" /> 糖蒜</label>
             <label><input type="checkbox" value="陈醋" /> 醋</label>

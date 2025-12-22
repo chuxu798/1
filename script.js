@@ -128,7 +128,7 @@ const menuData = [
       medium: { label: '中杯', price: 3000 },
     },
     tastes: ['无糖', '少糖', '正常糖'],
-    addons: ['包子小份'],
+    addons: [],
   },
   {
     id: 'sweets',
@@ -168,7 +168,6 @@ const cartListInfo = document.getElementById('cart-list-info');
 const subtotalMenu = document.getElementById('subtotal-menu');
 const subtotalInfo = document.getElementById('subtotal-info');
 const cartPill = document.getElementById('cart-pill');
-const toInfoBtn = document.getElementById('to-info');
 const toInfoCta = document.getElementById('to-info-cta');
 const backToMenuBtn = document.getElementById('back-to-menu');
 const startOrderBtn = document.getElementById('start-order');
@@ -206,6 +205,9 @@ const modalAddNext = document.getElementById('modal-add-next');
 
 const addonPrices = {
   米饭: 1000,
+  米饭加量: 1000,
+  米饭加一份: 1000,
+  包子小份: 0,
 };
 
 // Navigation
@@ -220,7 +222,6 @@ function goToStep(step) {
 }
 
 startOrderBtn.addEventListener('click', () => goToStep(2));
-toInfoBtn.addEventListener('click', () => goToStep(3));
 toInfoCta.addEventListener('click', () => goToStep(3));
 backToMenuBtn.addEventListener('click', () => goToStep(2));
 startNewTop.addEventListener('click', resetAll);
@@ -318,7 +319,6 @@ function renderCart(target, subtotalEl) {
   document.getElementById(subtotalEl).textContent = formatCurrency(subtotal);
   cartPill.textContent = `购物车 ${state.cart.size} · ${formatCurrency(subtotal)}`;
   const hasItems = state.cart.size > 0;
-  toInfoBtn.disabled = !hasItems;
   toInfoCta.disabled = !hasItems;
 }
 
@@ -352,6 +352,7 @@ function openModal(item) {
     if (idx === 0) opt.selected = true;
     sizeSelect.appendChild(opt);
   });
+  sizeSelect.classList.add('selected-choice');
 
   // tastes
   tasteSelect.innerHTML = '';
@@ -361,18 +362,30 @@ function openModal(item) {
     opt.textContent = taste;
     tasteSelect.appendChild(opt);
   });
+  tasteSelect.classList.add('selected-choice');
 
   // addons
   addonChips.innerHTML = '';
-  (item.addons && item.addons.length ? item.addons : ['无']).forEach((addon) => {
-    if (addon === '无') return;
-    const label = document.createElement('label');
-    const input = document.createElement('input');
-    input.type = 'checkbox';
-    input.value = addon;
-    label.append(input, document.createTextNode(` ${addon}`));
-    addonChips.appendChild(label);
-  });
+  const addonList = item.addons && item.addons.length ? item.addons : [];
+  addonChips.innerHTML = '';
+  if (addonList.length === 0) {
+    const none = document.createElement('p');
+    none.className = 'muted small';
+    none.textContent = '无可选小料';
+    addonChips.appendChild(none);
+  } else {
+    addonList.forEach((addon) => {
+      const label = document.createElement('label');
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.value = addon;
+      const price = addonPrices[addon] !== undefined ? addonPrices[addon] : 500;
+      const text = document.createElement('span');
+      text.textContent = `${addon}（+₩${price.toLocaleString('ko-KR')}）`;
+      label.append(input, text);
+      addonChips.appendChild(label);
+    });
+  }
   updateModalPrice();
 
   modal.hidden = false;
@@ -403,6 +416,12 @@ modal.addEventListener('click', (e) => {
 });
 sizeSelect.addEventListener('change', updateModalPrice);
 addonChips.addEventListener('change', updateModalPrice);
+tasteSelect.addEventListener('change', () => {
+  tasteSelect.classList.add('selected-choice');
+});
+sizeSelect.addEventListener('change', () => {
+  sizeSelect.classList.add('selected-choice');
+});
 
 function buildCartKey(id, taste, addons) {
   const addonKey = addons.slice().sort().join('+') || 'none';
