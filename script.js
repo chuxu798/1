@@ -513,15 +513,39 @@ function copyOrderDetails() {
   lines.push('[订单确认] 在付款成功并截图发送后我们将回复您转账核对成功，并按照您指定的时间进行派送，请稍等~感谢您的选择~~');
   const details = lines.join('\n');
 
-  navigator.clipboard
-    .writeText(details)
-    .then(() => {
-      copyOrderBtn.textContent = '已复制';
-      setTimeout(() => (copyOrderBtn.textContent = '复制订单信息'), 1500);
-    })
-    .catch(() => {
-      copyOrderBtn.textContent = '复制失败，请手动选择';
+  const fallbackCopy = () => {
+    const textarea = document.createElement('textarea');
+    textarea.value = details;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+  };
+
+  const onSuccess = () => {
+    copyOrderBtn.textContent = '已复制';
+    setTimeout(() => (copyOrderBtn.textContent = '复制订单信息'), 1500);
+  };
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(details).then(onSuccess).catch(() => {
+      try {
+        fallbackCopy();
+        onSuccess();
+      } catch (err) {
+        copyOrderBtn.textContent = '复制失败，请长按选择文本';
+      }
     });
+  } else {
+    try {
+      fallbackCopy();
+      onSuccess();
+    } catch (err) {
+      copyOrderBtn.textContent = '复制失败，请长按选择文本';
+    }
+  }
 }
 
 function resetAll() {

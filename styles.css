@@ -612,3 +612,67 @@ select {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 540px) {
+  body {
+    background: #f9fafb;
+  }
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .page-shell {
+    padding: 12px;
+  }
+  .page {
+    padding: 14px;
+    box-shadow: none;
+    border-radius: 12px;
+  }
+  .hero {
+    gap: 12px;
+  }
+  .hero-text h1 {
+    font-size: 22px;
+  }
+  .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .item-card {
+    grid-template-rows: 120px 1fr;
+  }
+  .cart-drawer {
+    margin-top: 10px;
+  }
+  .cart-list {
+    max-height: 240px;
+  }
+  .checkout-form input,
+  .checkout-form textarea,
+  select {
+    font-size: 13px;
+  }
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+  .modal {
+    padding: 12px;
+  }
+  .modal-body img {
+    height: 180px;
+  }
+  .modal-actions {
+    grid-template-columns: 1fr;
+  }
+  .menu-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .cart-pill {
+    width: 100%;
+    text-align: right;
+  }
+}
