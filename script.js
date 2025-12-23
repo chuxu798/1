@@ -589,7 +589,7 @@ function copyOrderDetails() {
 }
 
 function saveCustomerInfo(formData) {
-  if (!rememberInfo.checked) {
+  if (!rememberInfo || !rememberInfo.checked) {
     try {
       localStorage.removeItem('chuXuCustomerInfo');
     } catch (e) {
