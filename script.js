@@ -210,7 +210,6 @@ const addonPrices = {
   米饭: 1000,
   米饭加量: 1000,
   米饭加一份: 1000,
-  包子小份: 0,
   默认: 0,
   无: 0,
 };
@@ -397,7 +396,7 @@ function openModal(item) {
       const input = document.createElement('input');
       input.type = 'checkbox';
       input.value = addon;
-      const price = addonPrices[addon] !== undefined ? addonPrices[addon] : 0;
+      const price = addonPrices[addon] ?? 500;
       const text = document.createElement('span');
       text.textContent = price > 0 ? `${addon}（+₩${price.toLocaleString('ko-KR')}）` : `${addon}（+₩0）`;
       label.append(input, text);
@@ -422,7 +421,7 @@ function updateModalPrice() {
   const sizeKey = sizeSelect.value || Object.keys(state.currentDish.sizes)[0];
   const sizeData = state.currentDish.sizes[sizeKey] || Object.values(state.currentDish.sizes)[0];
   const addonCost = Array.from(addonChips.querySelectorAll('input:checked')).reduce(
-    (sum, input) => sum + (addonPrices[input.value] || 500),
+    (sum, input) => sum + (addonPrices[input.value] ?? 500),
     0,
   );
   modalPrice.textContent = formatCurrency(sizeData.price + addonCost);
@@ -453,7 +452,7 @@ function addCurrentDish(goNext = false) {
   const taste = tasteSelect.value;
   const addons = Array.from(addonChips.querySelectorAll('input:checked')).map((c) => c.value);
   const key = buildCartKey(`${state.currentDish.id}-${sizeKey}`, taste, addons);
-  const addonCost = addons.reduce((sum, a) => sum + (addonPrices[a] || 500), 0);
+  const addonCost = addons.reduce((sum, a) => sum + (addonPrices[a] ?? 500), 0);
   const price = sizeData.price + addonCost;
   const current = state.cart.get(key);
   state.cart.set(key, {
