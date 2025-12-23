@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>褚旭外卖 | 全州中餐外卖</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">褚旭</div>
+      <div>
+        <p class="brand-title">褚旭外卖</p>
+        <p class="brand-subtitle">韩国全州市 · 正宗中餐配送</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div class="status-pill">营业中 · 11:00-23:00</div>
+      <div class="contact">
+        <span>客服 / 截图发送：</span>
+        <strong>微信 ID：chuxu-waimai</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <div class="stepper">
+      <div class="step" data-step="1">首页</div>
+      <div class="step" data-step="2">菜单</div>
+      <div class="step" data-step="3">信息填写</div>
+      <div class="step" data-step="4">订单确认</div>
+    </div>
+
+    <!-- Page 1: Home -->
+    <section class="page" id="page-home">
+      <div class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">褚旭外卖 · 全州本地配送</p>
+          <h1>正宗中国味 · 韩国全州市即时送达</h1>
+          <p class="muted">
+            我们专注全州市中餐外卖：凉皮、肉夹馍、饺子、锅物、热炒、早餐点心应有尽有。
+            中文点单，微信客服实时确认，骑手快速配送。
+          </p>
+          <ul class="hero-list">
+            <li>服务区域：全州市主城区（其他区域请先咨询）</li>
+            <li>下单流程：浏览首页 → 选择菜品与口味 → 填写收货信息 → 复制订单转账</li>
+            <li>支付方式：转账汇款，发送转账截图到微信 ID：chuxu-waimai</li>
+          </ul>
+          <button class="primary" id="start-order">继续，去菜单</button>
+        </div>
+        <div class="hero-visual">
+          <div class="logo-badge">褚旭外卖</div>
+          <div class="food-collage">
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=600&q=80" alt="肉夹馍" />
+            <img src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?auto=format&fit=crop&w=600&q=80" alt="饺子" />
+            <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80" alt="热菜" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 2: Menu -->
+    <section class="page" id="page-menu" hidden>
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">菜单 / 第二步</p>
+          <h2>选择菜品与口味</h2>
+          <p class="muted">点击菜品可选择辣度、咸度和小料，加完后可继续点餐或前往填写信息。</p>
+        </div>
+        <div class="actions-inline">
+          <button class="secondary" id="back-to-home">返回首页</button>
+        </div>
+      </div>
+      <div class="menu-header">
+        <div class="menu-tags-top">
+          <button class="tag active" data-category="all" id="tag-all">全部</button>
+        </div>
+        <div class="menu-tags tags-compact" id="menu-tags-others"></div>
+      </div>
+      <div class="menu-grid" id="menu-grid"></div>
+      <aside class="cart-drawer">
+        <div class="cart-drawer-head">
+          <h3>购物车</h3>
+          <p class="muted small">实时明细 · 可修改数量</p>
+        </div>
+        <div id="cart-list-menu" class="cart-list"></div>
+        <div class="cart-drawer-foot">
+          <div class="line">
+            <span>小计</span>
+            <strong id="subtotal-menu">₩0</strong>
+          </div>
+          <button class="primary" id="to-info-cta" disabled>下一步：填写收货信息</button>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Page 3: Customer info -->
+    <section class="page" id="page-info" hidden>
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">填写信息 / 第三步</p>
+          <h2>收货信息 & 购物车明细</h2>
+          <p class="muted">确认收货方式与联系人，点击提交生成订单号。</p>
+        </div>
+        <div class="actions-inline">
+          <button class="secondary" id="back-to-menu">返回菜单继续加菜</button>
+        </div>
+      </div>
+      <div class="info-grid">
+        <form id="customer-form" class="form-card">
+          <label>收货人姓名
+            <input type="text" name="name" placeholder="请输入姓名" required />
+          </label>
+          <label>手机号
+            <input type="tel" name="phone" placeholder="韩国手机号" required />
+          </label>
+          <label>配送地址
+            <textarea name="address" rows="2" placeholder="全州市 + 详细门牌号" required></textarea>
+          </label>
+          <label>送达时间
+            <select name="time" id="time-select">
+              <option value="出餐后直接派送" selected>出餐后直接派送</option>
+            </select>
+          </label>
+          <label>备注（口味、少油等）
+            <textarea name="notes" rows="2" placeholder="可选填"></textarea>
+          </label>
+          <button type="submit" class="primary">提交订单，生成订单号</button>
+          <div id="form-error" class="error-message" role="alert"></div>
+        </form>
+        <div class="cart-summary">
+          <h3>购物车明细</h3>
+          <div id="cart-list-info" class="cart-list"></div>
+          <div class="cart-drawer-foot">
+            <div class="line">
+              <span>商品小计</span>
+              <strong id="subtotal-info">₩0</strong>
+            </div>
+            <p class="muted small">包装费 / 配送费由店员确认后告知。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 4: Review & payment -->
+    <section class="page" id="page-review" hidden>
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">确认订单 / 第四步</p>
+          <h2>核对信息并转账</h2>
+          <p class="muted">请复制订单信息后发送给微信客服，并完成转账。</p>
+        </div>
+        <div class="actions-inline">
+          <button class="secondary" id="back-to-info">返回信息填写</button>
+          <button class="secondary" id="start-new">再下一单</button>
+        </div>
+      </div>
+      <div class="order-card">
+        <div class="order-header order-header-stack">
+          <p><span class="muted">订单编号</span> <span id="order-number"></span></p>
+          <p><span class="muted">下单时间</span> <span id="order-time"></span></p>
+        </div>
+        <div class="order-content">
+          <div>
+            <h3>顾客信息</h3>
+            <ul class="info-list" id="customer-info"></ul>
+          </div>
+          <div>
+            <h3>点单明细</h3>
+            <ul class="info-list" id="order-details"></ul>
+            <p class="total-line">总计：<strong id="order-total">₩0</strong></p>
+          </div>
+        </div>
+        <div class="payment-box">
+          <h4>转账账户</h4>
+          <p><strong>KB국민은행 123-4567-8901 (예금주: CHU XU)</strong></p>
+          <p>请在 10 分钟内完成转账，并将转账截图发送到微信：<strong>chuxu-waimai</strong>。</p>
+          <p>请点击复制订单信息按钮，之后将信息粘贴发送给微信客服，转账后将转账截图一并发送，客服核对转账信息后会立刻为您安排订单。</p>
+        </div>
+        <div class="order-actions">
+          <button class="primary" id="copy-order">复制订单信息</button>
+          <button class="secondary" id="start-new-bottom">返回首页</button>
+        </div>
+        <p class="muted small">店内核对转账后按明细制作并配送。如有缺货或价格变动，会通过微信确认。</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Dish modal -->
+  <div class="modal-backdrop" id="dish-modal" hidden>
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow" id="modal-category"></p>
+          <h3 id="modal-title"></h3>
+          <p class="muted" id="modal-desc"></p>
+        </div>
+        <button class="icon-btn" id="modal-close" aria-label="关闭">✕</button>
+      </div>
+      <div class="modal-body">
+        <img id="modal-image" alt="菜品图片" />
+        <div class="option-group">
+          <p class="label-inline">1. 规格</p>
+          <label>
+            <select id="size-select"></select>
+          </label>
+        </div>
+        <div class="option-group">
+          <p class="label-inline">2. 口味</p>
+          <label>
+            <select id="taste-select">
+              <option value="清淡">清淡 / 不辣</option>
+              <option value="微辣">微辣</option>
+              <option value="中辣">中辣</option>
+              <option value="重辣">重辣</option>
+              <option value="偏咸">偏咸</option>
+            </select>
+          </label>
+        </div>
+        <div class="option-group">
+          <p class="label-inline">3. 可选小料</p>
+          <div class="chips" id="addon-chips">
+            <label><input type="checkbox" value="糖蒜" /> 糖蒜</label>
+            <label><input type="checkbox" value="陈醋" /> 醋</label>
+            <label><input type="checkbox" value="香油" /> 香油</label>
+            <label><input type="checkbox" value="辣椒油" /> 辣椒油</label>
+            <label><input type="checkbox" value="花生碎" /> 花生碎</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <div>
+          <p class="muted small">单价</p>
+          <p class="price" id="modal-price"></p>
+        </div>
+        <div class="modal-actions">
+          <button class="secondary" id="modal-add-more">加入购物车</button>
+          <button class="primary" id="modal-add-next">已选好直接下单</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>褚旭外卖 · 全州市中餐配送 · 微信：chuxu-waimai · 11:00-23:00</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
