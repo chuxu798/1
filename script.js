@@ -229,14 +229,14 @@ function goToStep(step) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-startOrderBtn.addEventListener('click', () => goToStep(2));
-toInfoCta.addEventListener('click', () => goToStep(3));
-backToMenuBtn.addEventListener('click', () => goToStep(2));
-startNewTop.addEventListener('click', resetAll);
-startNewBottom.addEventListener('click', resetAll);
-backToHomeBtn.addEventListener('click', () => goToStep(1));
-backToInfoBtn.addEventListener('click', () => goToStep(3));
-clearSavedBtn.addEventListener('click', clearSavedInfo);
+startOrderBtn?.addEventListener('click', () => goToStep(2));
+toInfoCta?.addEventListener('click', () => goToStep(3));
+backToMenuBtn?.addEventListener('click', () => goToStep(2));
+startNewTop?.addEventListener('click', resetAll);
+startNewBottom?.addEventListener('click', resetAll);
+backToHomeBtn?.addEventListener('click', () => goToStep(1));
+backToInfoBtn?.addEventListener('click', () => goToStep(3));
+clearSavedBtn?.addEventListener('click', clearSavedInfo);
 clearSavedBtn.addEventListener('click', clearSavedInfo);
 
 // Rendering
