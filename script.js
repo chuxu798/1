@@ -182,8 +182,6 @@ const formError = document.getElementById('form-error');
 const timeSelect = document.getElementById('time-select');
 const rememberInfo = document.getElementById('remember-info');
 const clearSavedBtn = document.getElementById('clear-saved');
-const rememberInfo = document.getElementById('remember-info');
-const clearSavedBtn = document.getElementById('clear-saved');
 
 // Review elements
 const orderNumberEl = document.getElementById('order-number');
@@ -236,7 +234,6 @@ startNewTop?.addEventListener('click', resetAll);
 startNewBottom?.addEventListener('click', resetAll);
 backToHomeBtn?.addEventListener('click', () => goToStep(1));
 backToInfoBtn?.addEventListener('click', () => goToStep(3));
-clearSavedBtn?.addEventListener('click', clearSavedInfo);
 clearSavedBtn.addEventListener('click', clearSavedInfo);
 
 // Rendering
@@ -491,7 +488,6 @@ customerForm.addEventListener('submit', (e) => {
   orderNumberEl.textContent = state.orderNumber;
   orderTimeEl.textContent = formatTime(state.orderTime);
   buildOrderSummary(formData);
-  saveCustomerInfo(formData);
   goToStep(4);
 });
 
@@ -588,54 +584,6 @@ function copyOrderDetails() {
   }
 }
 
-function saveCustomerInfo(formData) {
-  if (!rememberInfo || !rememberInfo.checked) {
-    try {
-      localStorage.removeItem('chuXuCustomerInfo');
-    } catch (e) {
-      // ignore
-    }
-    return;
-  }
-  const payload = {
-    name: formData.get('name') || '',
-    phone: formData.get('phone') || '',
-    address: formData.get('address') || '',
-    time: formData.get('time') || '',
-    notes: formData.get('notes') || '',
-  };
-  try {
-    localStorage.setItem('chuXuCustomerInfo', JSON.stringify(payload));
-  } catch (e) {
-    // ignore
-  }
-}
-
-function loadSavedCustomerInfo() {
-  try {
-    const raw = localStorage.getItem('chuXuCustomerInfo');
-    if (!raw) return;
-    const data = JSON.parse(raw);
-    ['name', 'phone', 'address', 'time', 'notes'].forEach((key) => {
-      const field = customerForm.elements[key];
-      if (field && data[key]) field.value = data[key];
-    });
-    if (rememberInfo) rememberInfo.checked = true;
-  } catch (e) {
-    // ignore
-  }
-}
-
-function clearSavedInfo() {
-  try {
-    localStorage.removeItem('chuXuCustomerInfo');
-  } catch (e) {
-    // ignore
-  }
-  customerForm.reset();
-  if (rememberInfo) rememberInfo.checked = false;
-}
-
 function resetAll() {
   state.cart.clear();
   state.activeCategory = 'all';
@@ -693,4 +641,3 @@ function populateTimeOptions() {
 }
 
 populateTimeOptions();
-loadSavedCustomerInfo();
