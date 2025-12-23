@@ -180,6 +180,7 @@ const backToInfoBtn = document.getElementById('back-to-info');
 const customerForm = document.getElementById('customer-form');
 const formError = document.getElementById('form-error');
 const timeSelect = document.getElementById('time-select');
+const CUSTOMER_INFO_KEY = 'chuxu-waimai-customer-info';
 
 // Review elements
 const orderNumberEl = document.getElementById('order-number');
@@ -223,6 +224,9 @@ function goToStep(step) {
     node.classList.toggle('active', Number(node.dataset.step) === step);
   });
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (step === 3) {
+    loadCustomerInfo();
+  }
 }
 
 startOrderBtn.addEventListener('click', () => goToStep(2));
@@ -480,6 +484,7 @@ customerForm.addEventListener('submit', (e) => {
     return;
   }
   const formData = new FormData(customerForm);
+  persistCustomerInfo(formData);
   state.orderNumber = generateOrderNumber();
   state.orderTime = new Date();
   orderNumberEl.textContent = state.orderNumber;
@@ -615,13 +620,6 @@ function formatTime(date) {
   return `${yyyy}-${mm}-${dd} ${hh}:${mi}`;
 }
 
-// Init
-renderTags();
-renderMenu();
-renderCart('cart-list-menu', 'subtotal-menu');
-renderCart('cart-list-info', 'subtotal-info');
-goToStep(1);
-
 function populateTimeOptions() {
   if (!timeSelect) return;
   const startHour = 7;
@@ -637,4 +635,66 @@ function populateTimeOptions() {
   }
 }
 
+function registerCustomerInfoPersistence() {
+  if (!customerForm) return;
+  const fields = ['name', 'phone', 'address', 'time', 'notes'];
+  fields.forEach((field) => {
+    const input = customerForm.elements[field];
+    if (!input) return;
+    const eventName = input.tagName === 'SELECT' ? 'change' : 'input';
+    input.addEventListener(eventName, () => persistCustomerInfo(new FormData(customerForm)));
+  });
+}
+
+function persistCustomerInfo(formData) {
+  if (!formData) return;
+  const payload = {
+    name: formData.get('name') || '',
+    phone: formData.get('phone') || '',
+    address: formData.get('address') || '',
+    time: formData.get('time') || '',
+    notes: formData.get('notes') || '',
+  };
+  try {
+    localStorage.setItem(CUSTOMER_INFO_KEY, JSON.stringify(payload));
+  } catch (err) {
+    // ignore storage errors
+  }
+}
+
+function loadCustomerInfo() {
+  if (!customerForm) return;
+  try {
+    const raw = localStorage.getItem(CUSTOMER_INFO_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (typeof data !== 'object' || data === null) return;
+    if (data.name !== undefined) customerForm.elements.name.value = data.name;
+    if (data.phone !== undefined) customerForm.elements.phone.value = data.phone;
+    if (data.address !== undefined) customerForm.elements.address.value = data.address;
+    if (data.notes !== undefined) customerForm.elements.notes.value = data.notes;
+    if (data.time !== undefined) {
+      const existingOption = Array.from(timeSelect.options).some((opt) => opt.value === data.time);
+      if (!existingOption) {
+        const opt = document.createElement('option');
+        opt.value = data.time;
+        opt.textContent = data.time;
+        timeSelect.appendChild(opt);
+      }
+      timeSelect.value = data.time;
+    }
+  } catch (err) {
+    // ignore parse errors
+  }
+}
+
 populateTimeOptions();
+loadCustomerInfo();
+registerCustomerInfoPersistence();
+
+// Init
+renderTags();
+renderMenu();
+renderCart('cart-list-menu', 'subtotal-menu');
+renderCart('cart-list-info', 'subtotal-info');
+goToStep(1);
